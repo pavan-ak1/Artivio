@@ -24,6 +24,10 @@
     "prisma": "^6.15.0",
     "zod": "^4.1.5"
   },
+  "devDependencies": {
+    "@repo/backend-common":"workspace:*",
+    "@repo/common":"workspace:*"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC"
