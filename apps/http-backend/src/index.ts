@@ -11,6 +11,9 @@ app.use(cookieParser());
 //all imports
 import authRoutes from "./routes/authRoutes"
 
+app.use('/api/v1/auth', authRoutes);
+
+
 const port = 5000;
 
 app.listen(port, ()=>{
