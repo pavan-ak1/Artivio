@@ -57,7 +57,7 @@ export const signup = async (req: Request, res: Response) => {
     const token = generateToken(newUser.id, email);
     //putting generated token into cookies
     res
-      .cookie("Token", token, {
+      .cookie("token", token, {
         httpOnly: true,
         secure: NODE_ENV === "production",
         sameSite: "strict",
@@ -77,8 +77,6 @@ export const signup = async (req: Request, res: Response) => {
     res.status(500).json({ message: "Internal server error" });
   }
 };
-
-
 
 export const signin = async (req: Request, res: Response) => {
   try {
@@ -107,7 +105,7 @@ export const signin = async (req: Request, res: Response) => {
     }
     const token = generateToken(user.id, user.email);
     res
-      .cookie("Token", token, {
+      .cookie("token", token, {
         httpOnly: true,
         secure: NODE_ENV === "production",
         sameSite: "strict",

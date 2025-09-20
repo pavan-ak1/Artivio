@@ -7,7 +7,7 @@ import {JWT_SECRET} from "@repo/backend-common/config"
 declare global {
   namespace Express {
     interface Request {
-      userId?: string;
+      userId: number;
     }
   }
 }
@@ -15,7 +15,7 @@ declare global {
 
 export const authenticateUser = async(req:Request,res:Response, next:NextFunction)=>{
 try{
-    const token =req.cookies?.token;//<-- token will be taken from cookies
+    const token =req.cookies?.token;
     if (!token) {
       return res.status(401).json({ message: "No token provided" });
     }

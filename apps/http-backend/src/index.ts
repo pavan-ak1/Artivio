@@ -10,9 +10,11 @@ app.use(cookieParser());
 
 //all imports
 import authRoutes from "./routes/authRoutes"
+import roomRoutes from "./routes/roomRoutes"
+
 
 app.use('/api/v1/auth', authRoutes);
-
+app.use('/api/v1/room',roomRoutes);
 
 const port = 5000;
 
